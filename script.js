@@ -1,23 +1,16 @@
-// Tunggu sampai seluruh elemen HTML ter-load
-document.addEventListener('DOMContentLoaded', () => {
-  // Bind tombol
-  document.getElementById('hitungBtn').addEventListener('click', hitung);
-  document.getElementById('resetBtn').addEventListener('click', reset);
+// Baca metode dari URL dan inject subjudul + default select
+const params = new URLSearchParams(window.location.search);
+const metodeParam = params.get('metode') || 'segiempat';
+document.getElementById('metode').value = metodeParam;
+const titles = {
+  segiempat: 'Menggunakan Metode Segi Empat',
+  titik_tengah: 'Menggunakan Metode Titik Tengah'
+};
+document.getElementById('subjudul').innerText = titles[metodeParam];
 
-  // Ambil metode dari URL (?metode=segiempat atau titik_tengah)
-  const params = new URLSearchParams(window.location.search);
-  const metode = params.get('metode') || 'segiempat';
-
-  // Set opsi di dropdown sesuai URL (opsional, kalau mau sync UI)
-  document.getElementById('metode').value = metode;
-
-  // Inject subjudul
-  const titles = {
-    segiempat: 'Menggunakan Metode Segi Empat',
-    titik_tengah: 'Menggunakan Metode Titik Tengah'
-  };
-  document.getElementById('subjudul').innerText = titles[metode];
-});
+// Bind tombol langsung
+document.getElementById('hitungBtn').addEventListener('click', hitung);
+document.getElementById('resetBtn').addEventListener('click', reset);
 
 function hitung() {
   const fxInput = document.getElementById('fx').value.trim();
@@ -26,18 +19,16 @@ function hitung() {
   const n = parseInt(document.getElementById('n').value);
   const metode = document.getElementById('metode').value;
 
-  // Validasi input
   if (!fxInput || isNaN(a) || isNaN(b) || isNaN(n) || n <= 0) {
     document.getElementById('output').innerHTML = `<p class="error">Input tidak valid!</p>`;
     return;
   }
 
-  // Buat fungsi f(x)
   let f;
   try {
     f = new Function('x', 'return ' + fxInput);
-    f(a);  // tes fungsi
-  } catch (err) {
+    f(a);
+  } catch {
     document.getElementById('output').innerHTML = `<p class="error">Fungsi f(x) tidak valid!</p>`;
     return;
   }
@@ -53,11 +44,9 @@ function hitung() {
   `;
 
   for (let i = 0; i < n; i++) {
-    // Pilih xi sesuai metode
-    const xi = (metode === 'segiempat')
+    const xi = metode === 'segiempat'
       ? a + i * h
       : a + (i + 0.5) * h;
-
     const fx = f(xi);
     const luas = fx * h;
     total += luas;
@@ -87,6 +76,8 @@ function hitung() {
 }
 
 function reset() {
-  ['fx', 'a', 'b', 'n'].forEach(id => document.getElementById(id).value = '');
+  ['fx', 'a', 'b', 'n'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
   document.getElementById('output').innerHTML = '';
 }
