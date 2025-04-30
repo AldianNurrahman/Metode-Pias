@@ -1,7 +1,7 @@
 function hitung() {
   const params = new URLSearchParams(window.location.search);
-  const metode = params.get('metode');
-  const fxInput = document.getElementById('fx').value.trim(); // Tambahan f(x)
+  const metode = params.get('metode') || 'segiempat'; // Default kalau null
+  const fxInput = document.getElementById('fx')?.value.trim(); // Safe check
   const a = parseFloat(document.getElementById('a').value);
   const b = parseFloat(document.getElementById('b').value);
   const n = parseInt(document.getElementById('n').value);
@@ -13,8 +13,8 @@ function hitung() {
 
   let f;
   try {
-    f = new Function("x", "return " + fxInput); // Proses input f(x)
-    f(1); // Tes fungsi
+    f = new Function("x", "return " + fxInput);
+    f(1);
   } catch (err) {
     document.getElementById('output').innerText = "Fungsi f(x) tidak valid!";
     return;
@@ -26,7 +26,7 @@ function hitung() {
 
   for (let i = 0; i < n; i++) {
     let xi = (metode === 'segiempat') ? a + i * h : a + (i + 0.5) * h;
-    let fx = f(xi); // Ganti dari xi*xi jadi input user
+    let fx = f(xi);
     let luas = fx * h;
     total += luas;
     table += `<tr><td>${i + 1}</td><td>${xi.toFixed(4)}</td><td>${fx.toFixed(4)}</td><td>${luas.toFixed(4)}</td></tr>`;
@@ -37,7 +37,7 @@ function hitung() {
 }
 
 function reset() {
-  document.getElementById('fx').value = ""; // reset juga input fx
+  document.getElementById('fx').value = "";
   document.getElementById('a').value = "";
   document.getElementById('b').value = "";
   document.getElementById('n').value = "";
