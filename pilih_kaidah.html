@@ -7,19 +7,29 @@
 </head>
 <body class="gradient">
   <header>
-    <h1>Pilih Kaidah Integrasi Numerik</h1>
-    <p>Metode Pias - Dibuat oleh Kelompok 3</p>
+    <h1>Pilih Kaidah Integrasi</h1>
   </header>
   <main>
     <section class="card">
-      <h2>Pilih Kaidah untuk Integrasi Numerik</h2>
-      <p>Silahkan pilih salah satu kaidah untuk menghitung integral:</p>
-      <a href="kalkulator.html?metode=segiempat" class="button">Metode Segi Empat</a>
-      <a href="kalkulator.html?metode=titik_tengah" class="button">Metode Titik Tengah</a>
+      <h2>Metode Segi Empat</h2>
+      <ol>
+        <li>Hitung lebar pias: <code>h = (b - a) / n</code></li>
+        <li>Gunakan titik kiri tiap pias: <code>x_i = a + i·h</code></li>
+        <li>Jumlahkan <code>f(x_i)·h</code> untuk i=0…n-1</li>
+      </ol>
+      <a href="kalkulator.html?metode=segiempat" class="button">Ke Kalkulator Segi Empat</a>
+    </section>
+
+    <section class="card">
+      <h2>Metode Titik Tengah</h2>
+      <ol>
+        <li>Hitung lebar pias: <code>h = (b - a) / n</code></li>
+        <li>Pakai titik tengah: <code>x_i = a + (i+½)·h</code></li>
+        <li>Jumlahkan <code>f(x_i)·h</code> untuk i=0…n-1</li>
+      </ol>
+      <a href="kalkulator.html?metode=titik_tengah" class="button">Ke Kalkulator Titik Tengah</a>
     </section>
   </main>
-  <footer>
-    <a href="tentang_kami.html">Tentang Kami</a>
-  </footer>
+  <footer><a href="index.html">Kembali ke Beranda</a></footer>
 </body>
 </html>
