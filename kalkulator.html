@@ -2,33 +2,38 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Kalkulator Integrasi Numerik</title>
+  <title>Kalkulator Integrasi</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body class="gradient">
   <header>
-    <h1>Integrasi Numerik</h1>
-    <p>Metode Pias - Dibuat oleh Kelompok 3</p>
+    <h1 id="judul">Kalkulator Integrasi</h1>
   </header>
   <main>
     <section class="card">
-      <h2>Masukkan Fungsi dan Parameter</h2>
-      <label>Fungsi f(x): <input id="fx" type="text" placeholder="Contoh: x*x + 2" /></label>
+      <h2 id="subjudul"></h2>
+      <label>Fungsi f(x): <input id="fx" type="text" placeholder="x*x + 2" /></label>
       <label>Batas bawah (a): <input id="a" type="number" /></label>
       <label>Batas atas (b): <input id="b" type="number" /></label>
       <label>Jumlah pias (n): <input id="n" type="number" /></label>
-      <label>Metode:
-        <select id="metode">
-          <option value="segiempat">Metode Segi Empat</option>
-          <option value="titik_tengah">Metode Titik Tengah</option>
-        </select>
-      </label>
       <button onclick="hitung()">Hitung</button>
       <button onclick="reset()">Reset</button>
       <div id="output"></div>
+      <a href="pilih_kaidah.html" class="button">Pilih Ulang Kaidah</a>
     </section>
   </main>
-  <footer><a href="tentang_kami.html">Tentang Kami</a></footer>
+  <footer><a href="index.html">Beranda</a></footer>
+
+  <script>
+    // Tampilkan judul sesuai metode
+    const params = new URLSearchParams(window.location.search);
+    const metode = params.get('metode') || 'segiempat';
+    const titles = {
+      segiempat: 'Menggunakan Metode Segi Empat',
+      titik_tengah: 'Menggunakan Metode Titik Tengah'
+    };
+    document.getElementById('subjudul').innerText = titles[metode];
+  </script>
 </body>
 </html>
