@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pias - Kelompok 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Metode Pias</h1>
+        <a href="https://github.com/aldiannurrahman" target="_blank">About Me</a>
+    </nav>
+
+    <div id="container">
+        <div id="step1" class="card">
+            <h2>Pilih Kaidah</h2>
+            <button onclick="showExplanation('segiempat')">Kaidah Segiempat</button>
+            <button onclick="showExplanation('tengah')">Kaidah Titik Tengah</button>
+        </div>
+
+        <div id="step2" class="card" style="display:none;">
+            <h2 id="judulKaidah"></h2>
+            <p id="penjelasanKaidah"></p>
+            <button onclick="showCalculator()">Lanjut ke Input</button>
+        </div>
+
+        <div id="step3" class="card" style="display:none;">
+            <h2>Kalkulator Metode Pias</h2>
+            <label for="fungsi">Fungsi f(x):</label>
+            <input type="text" id="fungsi" placeholder="Contoh: x*x+2">
+            <label for="a">Batas a:</label>
+            <input type="number" id="a">
+            <label for="b">Batas b:</label>
+            <input type="number" id="b">
+            <label for="n">Jumlah Pias (n):</label>
+            <input type="number" id="n" value="10">
+            <button onclick="hitung()">Hitung</button>
+            <button onclick="reset()">Reset</button>
+            <div id="hasil"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
