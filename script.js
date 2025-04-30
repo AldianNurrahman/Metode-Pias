@@ -1,7 +1,5 @@
 function hitung() {
-  const params = new URLSearchParams(window.location.search);
-  const metode = params.get('metode') || 'segiempat'; // Default kalau null
-  const fxInput = document.getElementById('fx')?.value.trim(); // Safe check
+  const fxInput = document.getElementById('fx').value.trim();
   const a = parseFloat(document.getElementById('a').value);
   const b = parseFloat(document.getElementById('b').value);
   const n = parseInt(document.getElementById('n').value);
@@ -14,7 +12,7 @@ function hitung() {
   let f;
   try {
     f = new Function("x", "return " + fxInput);
-    f(1);
+    f(1); // Test function
   } catch (err) {
     document.getElementById('output').innerText = "Fungsi f(x) tidak valid!";
     return;
@@ -25,7 +23,7 @@ function hitung() {
   let total = 0;
 
   for (let i = 0; i < n; i++) {
-    let xi = (metode === 'segiempat') ? a + i * h : a + (i + 0.5) * h;
+    let xi = a + i * h;
     let fx = f(xi);
     let luas = fx * h;
     total += luas;
