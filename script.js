@@ -1,9 +1,10 @@
 function hitung() {
-  const fxInput = document.getElementById('fx').value.trim();
-  const a = parseFloat(document.getElementById('a').value);
-  const b = parseFloat(document.getElementById('b').value);
-  const n = parseInt(document.getElementById('n').value);
-
+  const fxInput = document.getElementById('fx').value.trim();  // Input fungsi
+  const a = parseFloat(document.getElementById('a').value);   // Batas bawah
+  const b = parseFloat(document.getElementById('b').value);   // Batas atas
+  const n = parseInt(document.getElementById('n').value);     // Jumlah pias
+  const metode = document.getElementById('metode').value;     // Pilihan metode
+  
   if (!fxInput || isNaN(a) || isNaN(b) || isNaN(n) || n <= 0) {
     document.getElementById('output').innerText = "Input tidak valid!";
     return;
@@ -11,8 +12,8 @@ function hitung() {
 
   let f;
   try {
-    f = new Function("x", "return " + fxInput);
-    f(1); // Test function
+    f = new Function("x", "return " + fxInput);  // Buat fungsi f(x) dari input
+    f(1);  // Test fungsi
   } catch (err) {
     document.getElementById('output').innerText = "Fungsi f(x) tidak valid!";
     return;
@@ -23,7 +24,7 @@ function hitung() {
   let total = 0;
 
   for (let i = 0; i < n; i++) {
-    let xi = a + i * h;
+    let xi = (metode === 'segiempat') ? a + i * h : a + (i + 0.5) * h;
     let fx = f(xi);
     let luas = fx * h;
     total += luas;
