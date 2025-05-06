@@ -2,18 +2,24 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Kalkulator Integrasi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Metode Numerik 🔢</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="gradient">
-  <header>
-    <h1>Kalkulator Integrasi</h1>
-    <p>Gunakan kalkulator untuk menghitung integral menggunakan metode yang dipilih</p>
-  </header>
+<body>
+  <!-- Taskbar -->
+  <nav class="taskbar">
+    <h1>NumerikCalc</h1>
+    <ul>
+      <li><a href="index.html">🏠 Beranda</a></li>
+      <li><a href="pilih_kaidah.html">🧠 Pilih Kaidah</a></li>
+      <li><a href="tentang_kami.html">👥 Tentang Kami</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section class="card">
-      <h2>🔢 Kalkulator Metode Integrasi</h2>
+      <h2 id="subjudul">Kalkulator Integrasi</h2>
       <label for="fx">Fungsi f(x):</label>
       <input type="text" id="fx" placeholder="Misal: x^2" />
       <label for="a">Batas bawah (a):</label>
@@ -34,7 +40,7 @@
   </main>
 
   <footer><a href="index.html">Beranda</a></footer>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
