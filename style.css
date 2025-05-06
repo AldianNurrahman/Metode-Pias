@@ -1,68 +1,136 @@
-/* Taskbar */
-.taskbar {
-  background-color: #005f73; /* Warna biru tua yang sejuk */
-  padding: 15px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: white;
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #a2c2e8, #96c7fc);
+  color: #333;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Menjaga taskbar tetap di atas */
-  animation: slideIn 0.5s ease-out; /* Efek animasi muncul */
+  flex-direction: column;
+}
+
+.taskbar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .taskbar h1 {
-  font-size: 24px;
   margin: 0;
-  font-weight: 600;
 }
 
 .taskbar ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
 }
 
 .taskbar ul li {
-  margin: 0 15px;
-  font-size: 18px;
-  transition: transform 0.3s ease;
+  display: inline;
+  margin-right: 20px;
 }
 
-.taskbar ul li:hover {
-  transform: scale(1.1); /* Efek zoom saat hover */
-}
-
-.taskbar a {
-  text-decoration: none;
+.taskbar ul li a {
   color: white;
+  text-decoration: none;
   font-size: 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.taskbar a:hover {
-  color: #ffd700; /* Warna emas saat hover */
-  transform: scale(1.1); /* Efek zoom saat hover */
+.taskbar ul li a:hover {
+  color: #ffcc00;
 }
 
-/* Animasi taskbar masuk */
-@keyframes slideIn {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+button, .button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-/* Untuk menghindari tumpang tindih dengan konten */
-main {
-  padding-top: 100px; /* Menambahkan jarak tambahan untuk taskbar agar konten tidak tertutup */
+button:hover, .button:hover {
+  background-color: #45a049;
 }
 
-/* Jika taskbar terlalu tinggi, tambahkan padding-top di main agar tidak tertutup */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+footer a:hover {
+  color: #ffcc00;
+}
+
+/* Gradient effect for the body */
+.gradient {
+  background: linear-gradient(to right, #a2c2e8, #96c7fc);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
