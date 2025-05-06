@@ -2,39 +2,39 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Kalkulator Integrasi Numerik</title>
+  <title>Kalkulator Integrasi</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="gradient">
-  <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="pilih_kaidah.html">Pilih Kaidah</a></li>
-      <li><a href="tentang_kami.html">Tentang Kami</a></li>
-    </ul>
-  </nav>
-  <header><h1>Kalkulator Integrasi Numerik</h1></header>
+  <header>
+    <h1>Kalkulator Integrasi</h1>
+    <p>Gunakan kalkulator untuk menghitung integral menggunakan metode yang dipilih</p>
+  </header>
+
   <main>
     <section class="card">
-      <h2 id="subjudul">Menggunakan Metode</h2>
-
-      <label>Fungsi f(x):<input id="fx" type="text" placeholder="Contoh: x*x + 2" /></label>
-      <label>Batas bawah (a):<input id="a" type="number" /></label>
-      <label>Batas atas (b):<input id="b" type="number" /></label>
-      <label>Jumlah pias (n):<input id="n" type="number" /></label>
-      <label>Metode:
-        <select id="metode">
-          <option value="segiempat">Segi Empat</option>
-          <option value="titik_tengah">Titik Tengah</option>
-        </select>
-      </label>
-
+      <h2>🔢 Kalkulator Metode Integrasi</h2>
+      <label for="fx">Fungsi f(x):</label>
+      <input type="text" id="fx" placeholder="Misal: x^2" />
+      <label for="a">Batas bawah (a):</label>
+      <input type="number" id="a" placeholder="Misal: 0" />
+      <label for="b">Batas atas (b):</label>
+      <input type="number" id="b" placeholder="Misal: 1" />
+      <label for="n">Jumlah pias (n):</label>
+      <input type="number" id="n" placeholder="Misal: 4" />
+      <label for="metode">Pilih Metode:</label>
+      <select id="metode">
+        <option value="segiempat">Metode Segi Empat</option>
+        <option value="titik_tengah">Metode Titik Tengah</option>
+      </select>
       <button id="hitungBtn">Hitung</button>
       <button id="resetBtn">Reset</button>
-
       <div id="output"></div>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <footer><a href="index.html">Beranda</a></footer>
+  
+  <script src="kalkulator.js"></script>
 </body>
 </html>
