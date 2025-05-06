@@ -1,91 +1,117 @@
-/* Taskbar */
+:root {
+  --bg: #121212;
+  --bg-secondary: #1e1e1e;
+  --card-bg: #242424;
+  --text: #ffffff;
+  --text-secondary: #bbbbbb;
+  --accent: #4dd0e1;
+  --accent-dark: #26c6da;
+  --error: #ef5350;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
 .taskbar {
-  background-color: #005f73;
-  padding: 15px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: var(--bg-secondary);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
 .taskbar h1 {
-  font-size: 24px;
   margin: 0;
+  color: var(--accent);
+  font-size: 1.5rem;
 }
 
 .taskbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none;
   display: flex;
-}
-
-.taskbar ul li {
-  margin: 0 15px;
-  font-size: 18px;
-}
-
-.taskbar ul li:hover {
-  transform: scale(1.1);
+  gap: 1rem;
+  padding: 0;
 }
 
 .taskbar a {
+  color: var(--text);
   text-decoration: none;
-  color: white;
-  font-size: 18px;
+  transition: 0.3s;
 }
 
 .taskbar a:hover {
-  color: #ffd700;
+  color: var(--accent);
 }
 
-/* Main Section */
 main {
-  padding-top: 100px;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  background-color: #f0f4f8;
-  color: #333;
-}
-
-h1, h2 {
-  font-size: 2rem;
-}
-
-button {
-  background-color: #61dafb;
-  padding: 12px 24px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #3bb0d3;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 .card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
 }
 
-button:focus {
-  outline: none;
+.button, button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 
-a {
-  color:
+.button:hover, button:hover {
+  background: var(--accent-dark);
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: none;
+  border-radius: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid var(--bg-secondary);
+}
+
+th {
+  background: var(--bg-secondary);
+}
+
+tr:nth-child(even) {
+  background: #1a1a1a;
+}
+
+.error {
+  color: var(--error);
+  margin-top: 1rem;
+}
