@@ -19,24 +19,25 @@
 
   <main>
     <section class="card">
-      <h2>Pilih Metode Integrasi</h2>
-      <p>Pilih metode untuk menghitung integral:</p>
+      <h2 id="subjudul">Pilih Metode Integrasi</h2>
+      <p>Silakan pilih salah satu metode untuk menghitung integral:</p>
       <form id="kaidahForm">
         <label for="metode">Pilih Metode:</label>
         <select id="metode">
           <option value="segiempat">Metode Segi Empat</option>
           <option value="titik_tengah">Metode Titik Tengah</option>
         </select>
-        <button type="button" id="startBtn" class="button" onclick="startKalkulator()">➡️ Mulai Kalkulasi</button>
+
+        <div id="penjelasan">
+          <p><strong>Metode Segi Empat:</strong> Dalam metode ini, integral dihitung dengan membagi area di bawah kurva menjadi segi empat kecil. Setiap segi empat dihitung dengan lebar yang tetap, yaitu selisih antara batas bawah dan batas atas dibagi dengan jumlah interval.</p>
+          <p><strong>Metode Titik Tengah:</strong> Metode titik tengah menggunakan titik tengah setiap interval sebagai titik untuk menghitung luas. Metode ini memberikan pendekatan yang lebih akurat dalam beberapa kasus karena menggunakan titik tengah daripada batasnya.</p>
+        </div>
+
+        <button type="button" id="startBtn" class="button">➡️ Mulai Kalkulasi</button>
       </form>
     </section>
   </main>
 
-  <script>
-    function startKalkulator() {
-      const metode = document.getElementById('metode').value;
-      window.location.href = `kalkulator.html?metode=${metode}`;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
