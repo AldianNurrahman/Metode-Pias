@@ -1,70 +1,142 @@
-/* Style update */
+/* Global styles */
 body {
-  background-color: #f1f4f9;
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #a8c0ff, #3f94e1); /* Sejuk dengan gradasi warna biru */
   color: #333;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Card Styles */
+/* Taskbar */
+.taskbar {
+  background-color: #005f73;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskbar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.taskbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.taskbar ul li {
+  margin: 0 10px;
+}
+
+.taskbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.taskbar a:hover {
+  color: #ffd700;
+}
+
+/* Main content styles */
+main {
+  padding-top: 60px; /* Memberikan ruang untuk taskbar fixed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .card {
-  background-color: #fff;
-  padding: 2rem;
-  margin: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 600px;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+h1, h2 {
+  color: #005f73;
 }
 
-/* Buttons */
-button, .button {
-  padding: 0.8rem 1.6rem;
-  background-color: #5ab8f5;
-  color: #fff;
+button {
+  background-color: #005f73;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
-button:hover, .button:hover {
-  background-color: #4993b9;
+button:hover {
+  background-color: #003f52;
 }
 
-/* Header */
-header {
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #005f73;
+}
+
+#error {
+  color: red;
+  font-weight: bold;
+}
+
+footer {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 20px;
+  background-color: #005f73;
+  color: white;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #5ab8f5;
-}
-
-/* Table Styles */
+/* Table styles */
 table {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 20px;
   border-collapse: collapse;
 }
 
 th, td {
-  padding: 1rem;
+  padding: 8px 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem 0;
+th {
+  background-color: #f4f4f4;
 }
 
-footer a {
-  color: #5ab8f5;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+/* Error message */
+.error {
+  color: red;
+  font-weight: bold;
 }
