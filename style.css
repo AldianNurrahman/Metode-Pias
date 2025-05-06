@@ -1,106 +1,52 @@
-:root {
-  --bg-primary: #1f2428;
-  --bg-secondary: #2a2f36;
-  --card-bg: #323a44;
-  --text-primary: #e0e6f0;
-  --text-secondary: #a0aec0;
-  --accent: #61dafb;
-  --accent-dark: #3bb0d3;
-  --error: #ef5350;
-}
-
+/* Style update */
 body {
+  background-color: #f1f4f9;
   font-family: 'Inter', sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  margin: 0;
+  color: #333;
   line-height: 1.6;
 }
 
-nav {
-  background: var(--bg-secondary);
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a.active, nav a:hover {
-  color: var(--accent);
-}
-
-header {
-  text-align: center;
-  padding: 2rem;
-}
-
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
+/* Card Styles */
 .card {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
-  color: var(--accent);
-}
-
-.button, button {
-  background: var(--accent);
+/* Buttons */
+button, .button {
+  padding: 0.8rem 1.6rem;
+  background-color: #5ab8f5;
+  color: #fff;
   border: none;
-  color: var(--bg-primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  display: inline-block;
-  transition: background 0.2s ease;
+  border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.button:hover, button:hover {
-  background: var(--accent-dark);
+button:hover, .button:hover {
+  background-color: #4993b9;
 }
 
-input, select {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: var(--bg-secondary);
-  color: var(--text-primary);
+/* Header */
+header {
+  text-align: center;
+  padding: 1.5rem 0;
 }
 
-.error {
-  color: var(--error);
-  margin-top: 1rem;
+header h1 {
+  font-size: 2.5rem;
+  color: #5ab8f5;
 }
 
+/* Table Styles */
 table {
   width: 100%;
   margin-top: 1rem;
@@ -108,11 +54,17 @@ table {
 }
 
 th, td {
-  padding: 0.75rem;
+  padding: 1rem;
   text-align: center;
-  background: var(--bg-secondary);
+  border: 1px solid #ddd;
 }
 
-tr:nth-child(even) td {
-  background: var(--card-bg);
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: #5ab8f5;
 }
