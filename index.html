@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Numerik Kalkulator 🔢</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda - NumerikCalc</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="taskbar">
-    <h1>🔢 NumerikCalc</h1>
+    <h1>NumerikCalc</h1>
     <ul>
       <li><a href="index.html">🏠 Beranda</a></li>
       <li><a href="pilih_kaidah.html">🧠 Pilih Kaidah</a></li>
@@ -17,11 +17,46 @@
   </nav>
 
   <main>
+    <section class="intro-card">
+      <h2>🔢 Kalkulator Numerik</h2>
+      <p>Selamat datang di NumerikCalc, kalkulator online untuk menghitung integral numerik menggunakan metode yang sudah terbukti!</p>
+      <p>Kami menyediakan berbagai metode untuk menghitung integral, seperti <strong>Metode Segi Empat</strong> dan <strong>Metode Titik Tengah</strong>. Pilih salah satu metode yang sesuai dengan kebutuhanmu, dan coba hitung hasil integrasi dari fungsi yang kamu inginkan.</p>
+      <a href="pilih_kaidah.html" class="button">🧠 Pilih Kaidah Metode</a>
+    </section>
+
     <section class="card">
-      <h2>Selamat datang! 🎉</h2>
-      <p>Gunakan kalkulator metode numerik untuk menghitung integral tentu dengan metode yang tersedia.</p>
-      <a href="pilih_kaidah.html" class="button">➡️ Mulai Sekarang</a>
+      <h2>📐 Metode Segi Empat</h2>
+      <p>Metode Segi Empat menghitung integral dengan cara membagi interval [a, b] menjadi n subinterval yang panjangnya sama. Setiap subinterval dianggap sebagai persegi panjang dengan tinggi yang diambil dari nilai fungsi pada titik awal subinterval.</p>
+      <p><strong>Langkah-langkah:</strong></p>
+      <ol>
+        <li>Tentukan fungsi f(x) yang ingin dihitung integralnya.</li>
+        <li>Tentukan batas bawah (a) dan batas atas (b).</li>
+        <li>Tentukan jumlah subinterval (n).</li>
+        <li>Hitung panjang tiap subinterval: h = (b - a) / n.</li>
+        <li>Hitung integral dengan rumus:</li>
+        <pre>Integral ≈ h × Σ f(xi), untuk i = 0 hingga n-1, dengan xi = a + i × h</pre>
+      </ol>
+      <a href="pilih_kaidah.html" class="button">🔢 Pelajari Metode Segi Empat</a>
+    </section>
+
+    <section class="card">
+      <h2>🎯 Metode Titik Tengah</h2>
+      <p>Metode Titik Tengah adalah varian dari Metode Segi Empat. Perbedaannya terletak pada pemilihan titik untuk menghitung tinggi persegi panjang, yaitu menggunakan titik tengah subinterval. Hal ini membuat metode Titik Tengah lebih akurat daripada metode Segi Empat standar.</p>
+      <p><strong>Langkah-langkah:</strong></p>
+      <ol>
+        <li>Tentukan fungsi f(x) yang akan dihitung integralnya.</li>
+        <li>Tentukan batas bawah (a) dan batas atas (b) dari integral.</li>
+        <li>Tentukan jumlah subinterval (n).</li>
+        <li>Hitung panjang tiap subinterval: h = (b - a) / n.</li>
+        <li>Hitung integral dengan rumus:</li>
+        <pre>Integral ≈ h × Σ f(xi), untuk i = 0 hingga n-1, dengan xi = a + (i + 0.5) × h</pre>
+      </ol>
+      <a href="pilih_kaidah.html" class="button">🔢 Pelajari Metode Titik Tengah</a>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 NumerikCalc - Semua Hak Cipta Dilindungi</p>
+  </footer>
 </body>
 </html>
