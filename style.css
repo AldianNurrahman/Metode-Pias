@@ -62,5 +62,7 @@
 
 /* Untuk menghindari tumpang tindih dengan konten */
 main {
-  padding-top: 80px; /* Menambahkan jarak agar konten tidak tertutup taskbar */
+  padding-top: 100px; /* Menambahkan jarak tambahan untuk taskbar agar konten tidak tertutup */
 }
+
+/* Jika taskbar terlalu tinggi, tambahkan padding-top di main agar tidak tertutup */
