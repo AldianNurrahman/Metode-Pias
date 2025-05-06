@@ -2,12 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilih Kaidah 🔢</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilih Kaidah</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Taskbar -->
   <nav class="taskbar">
     <h1>NumerikCalc</h1>
     <ul>
@@ -19,25 +18,36 @@
 
   <main>
     <section class="card">
-      <h2 id="subjudul">Pilih Metode Integrasi</h2>
-      <p>Silakan pilih salah satu metode untuk menghitung integral:</p>
-      <form id="kaidahForm">
-        <label for="metode">Pilih Metode:</label>
-        <select id="metode">
-          <option value="segiempat">Metode Segi Empat</option>
-          <option value="titik_tengah">Metode Titik Tengah</option>
-        </select>
+      <h2>📐 Metode Segi Empat</h2>
+      <p>Metode ini menggunakan pembagian interval [a, b] menjadi n subinterval dengan panjang sama. Setiap subinterval dianggap sebagai persegi panjang dengan tinggi f(x) di titik awalnya.</p>
+      <p>
+        <strong>Langkah-langkah:</strong>
+        <ol>
+          <li>Hitung panjang setiap pias (h): <code>h = (b - a) / n</code></li>
+          <li>Tentukan titik <code>x<sub>i</sub> = a + i * h</code> untuk tiap pias</li>
+          <li>Hitung <code>f(x<sub>i</sub>)</code> untuk tiap pias</li>
+          <li>Kalikan dengan <code>h</code> untuk dapatkan luas tiap pias</li>
+          <li>Jumlahkan seluruh luas → hasil integral aproksimasi</li>
+        </ol>
+      </p>
+      <a href="kalkulator.html?metode=segiempat" class="button">🔢 Gunakan Segi Empat</a>
+    </section>
 
-        <div id="penjelasan">
-          <p><strong>Metode Segi Empat:</strong> Dalam metode ini, integral dihitung dengan membagi area di bawah kurva menjadi segi empat kecil. Setiap segi empat dihitung dengan lebar yang tetap, yaitu selisih antara batas bawah dan batas atas dibagi dengan jumlah interval.</p>
-          <p><strong>Metode Titik Tengah:</strong> Metode titik tengah menggunakan titik tengah setiap interval sebagai titik untuk menghitung luas. Metode ini memberikan pendekatan yang lebih akurat dalam beberapa kasus karena menggunakan titik tengah daripada batasnya.</p>
-        </div>
-
-        <button type="button" id="startBtn" class="button">➡️ Mulai Kalkulasi</button>
-      </form>
+    <section class="card">
+      <h2>🎯 Metode Titik Tengah</h2>
+      <p>Mirip dengan metode segi empat, tetapi tinggi setiap persegi panjang dihitung dari titik tengah subinterval. Lebih akurat dari metode segi empat standar.</p>
+      <p>
+        <strong>Langkah-langkah:</strong>
+        <ol>
+          <li>Hitung panjang pias (h): <code>h = (b - a) / n</code></li>
+          <li>Tentukan titik tengah <code>x<sub>i</sub> = a + (i + 0.5) * h</code></li>
+          <li>Hitung <code>f(x<sub>i</sub>)</code> di titik tengah tiap pias</li>
+          <li>Kalikan dengan <code>h</code> → luas tiap pias</li>
+          <li>Jumlahkan seluruh luas → hasil integral aproksimasi</li>
+        </ol>
+      </p>
+      <a href="kalkulator.html?metode=titik_tengah" class="button">🔢 Gunakan Titik Tengah</a>
     </section>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
