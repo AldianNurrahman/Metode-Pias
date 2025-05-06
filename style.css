@@ -1,97 +1,152 @@
 :root {
-  --bg: #121212;
-  --bg-secondary: #1e1e1e;
-  --card-bg: #242424;
-  --text: #ffffff;
-  --text-secondary: #bbbbbb;
-  --accent: #4dd0e1;
-  --accent-dark: #26c6da;
+  --bg-primary: #12181b;
+  --bg-secondary: #1e262b;
+  --card-bg: #263238;
+  --text-primary: #f1f1f1;
+  --text-secondary: #b0bec5;
+  --accent: #00bcd4;
+  --accent-dark: #008ba3;
   --error: #ef5350;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: linear-gradient(145deg, #12181b 0%, #1e262b 100%);
+  transition: background 0.3s ease;
+  padding-bottom: 2rem;
 }
 
+/* Taskbar */
 .taskbar {
+  background: var(--bg-secondary);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-secondary);
-  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px var(--shadow);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .taskbar h1 {
-  margin: 0;
-  color: var(--accent);
   font-size: 1.5rem;
+  color: var(--accent);
 }
 
 .taskbar ul {
   list-style: none;
   display: flex;
   gap: 1rem;
-  padding: 0;
 }
 
-.taskbar a {
-  color: var(--text);
+.taskbar ul li a {
+  color: var(--text-primary);
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-.taskbar a:hover {
+.taskbar ul li a:hover {
   color: var(--accent);
 }
 
+/* Main Content */
 main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
+/* Card */
 .card {
   background: var(--card-bg);
-  padding: 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 2rem;
   margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.button, button {
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-decoration: none;
-  display: inline-block;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
-.button:hover, button:hover {
-  background: var(--accent-dark);
+/* Heading */
+h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
 }
 
 input, select {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  background: var(--bg-secondary);
-  color: var(--text);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
 }
 
+input:focus, select:focus {
+  outline: 2px solid var(--accent);
+  background: var(--card-bg);
+}
+
+/* Buttons */
+button, .button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+button:hover, .button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+button:active, .button:active {
+  transform: translateY(0);
+}
+
+/* Output */
+#output {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: monospace;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -99,19 +154,53 @@ table {
 }
 
 th, td {
-  padding: 0.5rem;
-  border: 1px solid var(--bg-secondary);
+  padding: 0.75rem;
+  border-bottom: 1px solid #455a64;
+  text-align: center;
 }
 
 th {
   background: var(--bg-secondary);
+  color: var(--accent);
 }
 
-tr:nth-child(even) {
-  background: #1a1a1a;
-}
-
+/* Error */
 .error {
   color: var(--error);
   margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Style */
+@media (max-width: 768px) {
+  .taskbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .taskbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  button, .button {
+    width: 100%;
+    text-align: center;
+  }
 }
